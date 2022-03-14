@@ -432,7 +432,7 @@ async def playlist(client, m: Message):
 
 @Client.on_message(main_filter
                    & self_or_contact_filter
-                   & filters.regex("^!اصعد$"))
+                   & filters.regex("اصعدي"))
 async def join_group_call(client, m: Message):
     group_call = mp.group_call
     if not group_call:
