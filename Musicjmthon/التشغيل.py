@@ -430,9 +430,7 @@ async def playlist(client, m: Message):
     else:
         await m.reply("**• لم يتم تشغيل اي شي اصلا**")
 
-@Client.on_message(main_filter
-                   & self_or_contact_filter
-                   & filters.regex("اصعدي"))
+@Client.on_message(filters.command(["اصعد"], prefixes=f"{HNDLR}")) 
 async def join_group_call(client, m: Message):
     group_call = mp.group_call
     if not group_call:
