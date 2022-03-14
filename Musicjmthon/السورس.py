@@ -34,7 +34,7 @@ async def ping(client, m: Message):
     await m.delete()
     start = time()
     current_time = datetime.utcnow()
-    m_reply = await m.reply_text("⚡")
+    m_reply = await m.reply_text("🔥")
     delta_ping = time() - start
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
@@ -78,7 +78,9 @@ async def help(client, m: Message):
 
 • {HNDLR}بنك - لعرض سرعه النت للبوت
 
-• {HNDLR}الاوامر - لعرض اوامر سورس ميوزك عبيد  @R55R1 
+• {HNDLR}الاوامر` - لعرض اوامر سورس ميوزك عبيد` 
+
+• {HNDLR}للمزيد تابع القناة الخاصة بلتحديثات
 
 - أوامر المشرفين  : 
 • {HNDLR}استئناف - لمواصلة تشغيل المقطع الصوتي أو الفيديو المتوقف
