@@ -429,3 +429,19 @@ async def playlist(client, m: Message):
             await m.reply(QUE, disable_web_page_preview=True)
     else:
         await m.reply("**• لم يتم تشغيل اي شي اصلا**")
+
+@Client.on_message(main_filter
+                   & self_or_contact_filter
+                   & filters.regex("^!اصعد$"))
+async def join_group_call(client, m: Message):
+    group_call = mp.group_call
+    if not group_call:
+        mp.group_call = GroupCallFactory(client).get_file_group_call()
+        mp.group_call.add_handler(network_status_changed_handler,
+                                  GroupCallFileAction.NETWORK_STATUS_CHANGED)
+        mp.group_call.add_handler(playout_ended_handler,
+                                  GroupCallFileAction.PLAYOUT_ENDED)
+        await mp.group_call.start(m.chat.id)
+        await m.delete()
+    if group_call and group_call.is_connected:
+        await m.reply_text(f"{emoji.ROBOT} `ههلا عمري صعدت للدردشة ارسل `الاوامر")
