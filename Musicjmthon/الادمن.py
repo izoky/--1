@@ -15,7 +15,7 @@ async def skip(client, m: Message):
     if len(m.command) < 2:
         op = await skip_current_song(chat_id)
         if op == 0:
-            await m.reply("**- لا يوجد شيء في قائمة الانتظار لتخطيه**")
+            await m.reply("**- مرحبا يا حلو ماكو شي بلقائمة **")
         elif op == 1:
             await m.reply("**")
         else:
@@ -50,11 +50,11 @@ async def stop(client, m: Message):
         try:
             await call_py.leave_group_call(chat_id)
             clear_queue(chat_id)
-            await m.reply("**✅ تم إنهاء التشغيل بنجاح **")
+            await m.reply("**طفيتو الأغنية ♻️ **")
         except Exception as e:
             await m.reply(f"**هناك خطأ ** \n`{e}`")
     else:
-        await m.reply("**❌ لايوجد هناك اغنيه شغاله !**")
+        await m.reply("**ماكو هيج اغنية مشتغلة حياتي 🙂🤍 !**")
 
 
 @Client.on_message(filters.command(["ايقاف"], prefixes=f"{HNDLR}"))
@@ -71,7 +71,7 @@ async def pause(client, m: Message):
         except Exception as e:
             await m.reply(f"**خطأ** \n`{e}`")
     else:
-        await m.reply("**- لم يتم تشغيل اي شيء اصلا!**")
+        await m.reply("**- هوة ماكو شي مشغلة اصلا؟ !**")
 
 
 @Client.on_message(filters.command(["استئناف"], prefixes=f"{HNDLR}"))
@@ -88,4 +88,4 @@ async def resume(client, m: Message):
         except Exception as e:
             await m.reply(f"**خطأ** \n`{e}`")
     else:
-        await m.reply("** لم يتم إيقاف أي شيء مؤقتًا ❌**")
+        await m.reply("** تعبتني راح اغادر انته ما مشغل شي 🙂🤍 ❌**")
