@@ -83,7 +83,7 @@ async def resume(client, m: Message):
         try:
             await call_py.resume_stream(chat_id)
             await m.reply(
-                f"**▶ تم استئناف التشغيل للاغنيه المتوقفة **\n\n•  لإيقاف التشغيل مؤقتًا ، استخدم الأمر » {HNDLR}ايقاف**"
+                f"**▶ ✅تم استئناف التشغيل للاغنيه المتوقفة **\n\n•  لإيقاف التشغيل مؤقتًا ، استخدم الأمر » {HNDLR}ايقاف**"
             )
         except Exception as e:
             await m.reply(f"**خطأ** \n`{e}`")
